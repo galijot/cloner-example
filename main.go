@@ -28,8 +28,5 @@ func getPaths() (string, string) {
 	reader.Scan()
 	toPath := strings.Trim(reader.Text(), space)
 
-	// return fromPath, toPath
-	fmt.Println(fromPath, toPath)
-
-	return "/Users/mariogalijot/Desktop/fromPath", "/Users/mariogalijot/Desktop/toPath"
+	return fromPath, toPath
 }
