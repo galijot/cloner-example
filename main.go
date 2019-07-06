@@ -9,9 +9,21 @@ import (
 	"github.com/galijot/cloner"
 )
 
+type options struct {
+	includeHiddenItems bool
+}
+
+func (o options) IncludeHidden() bool {
+	return o.includeHiddenItems
+}
+
 func main() {
 	src, dst := getPaths()
-	cloner.Clone(src, dst)
+	err := cloner.Clone(src, dst, options{false})
+
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 // Reads the paths FROM and TO which a users wants to clone.
